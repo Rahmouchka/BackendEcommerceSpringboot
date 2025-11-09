@@ -21,17 +21,21 @@ public class CategorieService implements ICategorieService {
     }
 
     @Override
-    public Categorie updateCategorie(Categorie categorie) {
-        return categorieRepository.save(categorie);
+    public Categorie updateCategorie(Long id, Categorie categorie) {
+        Categorie existing = categorieRepository.findById(id).orElse(null);
+        if (existing != null) {
+            existing.setDesignant(categorie.getDesignant());
+            return categorieRepository.save(existing);
+        }
+        return null;
     }
-
     @Override
     public void deleteCategorie(Long id) {
         categorieRepository.deleteById(id);
     }
 
     @Override
-    public Categorie getCategorie(Long id) {
+    public Categorie getCategorieById(Long id) {
         Optional<Categorie> categorie = categorieRepository.findById(id);
         return categorie.orElse(null);
     }

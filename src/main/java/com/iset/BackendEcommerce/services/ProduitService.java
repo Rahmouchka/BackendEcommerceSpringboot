@@ -21,8 +21,18 @@ public class ProduitService implements IProduitService {
     }
 
     @Override
-    public Produit updateProduit(Produit produit) {
-        return produitRepository.save(produit);
+    public Produit updateProduit(Long id, Produit produit) {
+        Produit existing = produitRepository.findById(id).orElse(null);
+        if (existing != null) {
+            existing.setNom(produit.getNom());
+            existing.setDateAchat(produit.getDateAchat());
+            existing.setDescription(produit.getDescription());
+            existing.setPrixUnitaire(produit.getPrixUnitaire());
+            existing.setQteStock(produit.getQteStock());
+            existing.setCategorie(produit.getCategorie());
+            return produitRepository.save(existing);
+        }
+        return null;
     }
 
     @Override
@@ -30,7 +40,7 @@ public class ProduitService implements IProduitService {
         produitRepository.deleteById(id);
     }
     @Override
-    public Produit getProduit(Long id) {
+    public Produit getProduitById(Long id) {
         Optional<Produit> produit = produitRepository.findById(id);
         return produit.orElse(null);
     }

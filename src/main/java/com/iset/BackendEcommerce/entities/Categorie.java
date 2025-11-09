@@ -1,5 +1,6 @@
 package com.iset.BackendEcommerce.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class Categorie {
     @Column
     private String designant;
     @OneToMany(mappedBy = "categorie")
+    @JsonManagedReference
     private List<Produit> produits;
 
     public long getIdCategorie() {

@@ -1,5 +1,7 @@
 package com.iset.BackendEcommerce.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,6 +32,7 @@ public class Produit {
     private float qteStock;
     @ManyToOne
     @JoinColumn(name = "idCategorie",nullable = false)
+    @JsonBackReference
     private Categorie categorie;
 
     public long getIdProduit() {

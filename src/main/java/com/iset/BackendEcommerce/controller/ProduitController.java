@@ -9,13 +9,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/*
 @RestController
-@RequestMapping("/api/produits")
+@RequestMapping("/api")
 @CrossOrigin(origins = "*")
 // au lieu de * on met http//localhost et le num de port qu'on va accepter (coté sécurité)
-
+*/
 public class ProduitController {
+    /*
     @Autowired
     private IProduitService produitService;
 
@@ -33,7 +34,7 @@ public class ProduitController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/produits")
     public ResponseEntity<List<Produit>> getAllProduits() {
         try {
             List<Produit> produits = produitService.getAllProduits();
@@ -71,5 +72,5 @@ public class ProduitController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
+*/
 }
