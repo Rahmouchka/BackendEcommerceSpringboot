@@ -4,7 +4,7 @@ import com.iset.BackendEcommerce.entities.Categorie;
 
 import java.util.List;
 
-public interface ICategorieService {
+public interface ICategorieService {/*
     Categorie saveCategorie(Categorie categorie);
     Categorie updateCategorie(Long id, Categorie categorie);
     void deleteCategorie(Long id);
@@ -12,4 +12,5 @@ public interface ICategorieService {
     List<Categorie> getAllCategories();
     Categorie findByDesignant(String designant);
     boolean existsByDesignant(String designant);
+    */
 }

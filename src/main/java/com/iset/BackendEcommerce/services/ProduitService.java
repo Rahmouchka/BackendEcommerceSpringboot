@@ -12,6 +12,7 @@ import java.util.Optional;
 @Service
 @Transactional
 public class ProduitService implements IProduitService {
+    /*
     @Autowired
     private ProduitRepository produitRepository;
 
@@ -49,5 +50,7 @@ public class ProduitService implements IProduitService {
     public List<Produit> getAllProduits() {
         return produitRepository.findAll();
     }
+
+     */
 
 }

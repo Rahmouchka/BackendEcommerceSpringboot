@@ -12,6 +12,7 @@ import java.util.Optional;
 @Service
 @Transactional
 public class CategorieService implements ICategorieService {
+    /*
     @Autowired
     private CategorieRepository categorieRepository;
 
@@ -54,5 +55,7 @@ public class CategorieService implements ICategorieService {
     public boolean existsByDesignant(String designant) {
         return categorieRepository.existsByDesignant(designant);
     }
+    */
+
 
 }

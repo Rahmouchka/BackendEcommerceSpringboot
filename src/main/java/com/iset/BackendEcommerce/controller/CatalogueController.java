@@ -14,6 +14,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 // au lieu de * on met http//localhost et le num de port qu'on va accepter (coté sécurité)
 public class CatalogueController {
+    /*
 
     @Autowired
     private IProduitService produitService;
@@ -69,4 +70,6 @@ public class CatalogueController {
     public void deleteCategorie(@PathVariable Long id) {
         categorieService.deleteCategorie(id);
     }
+
+     */
 }

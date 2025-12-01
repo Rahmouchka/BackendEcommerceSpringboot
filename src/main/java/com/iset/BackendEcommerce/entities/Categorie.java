@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,30 +19,14 @@ import java.util.List;
 public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idCategorie;
+    private long id;
+
+    @Column(nullable = false, length = 100)
+    private String nom;
+
     @Column
-    private String designant;
-    @OneToMany(mappedBy = "categorie")
-    @JsonManagedReference
-    private List<Produit> produits;
+    private String description;
 
-    public long getIdCategorie() {
-        return idCategorie;
-    }
-
-    public String getDesignant() {
-        return designant;
-    }
-
-    public List<Produit> getProduits() {
-        return produits;
-    }
-
-    public void setIdCategorie(long idCategorie) {
-        this.idCategorie = idCategorie;
-    }
-
-    public void setDesignant(String designant) {
-        this.designant = designant;
-    }
+    @OneToMany(mappedBy = "categorie", fetch = FetchType.LAZY)
+    private List<Produit> produits = new ArrayList<>();
 }

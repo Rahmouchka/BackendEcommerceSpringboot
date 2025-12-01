@@ -1,4 +1,6 @@
 package com.iset.BackendEcommerce.entities;
 
-public class Admin {
+public enum Role {
+    USER,
+    ADMIN
 }
