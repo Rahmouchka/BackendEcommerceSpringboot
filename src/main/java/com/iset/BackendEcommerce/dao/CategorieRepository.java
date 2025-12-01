@@ -3,11 +3,13 @@ package com.iset.BackendEcommerce.dao;
 import com.iset.BackendEcommerce.entities.Categorie;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CategorieRepository extends JpaRepository<Categorie, Long> {
-    /*
-    Categorie findByDesignant(String designant);
+import java.util.Optional;
 
-    boolean existsByDesignant(String designant);
-    */
+public interface CategorieRepository extends JpaRepository<Categorie, Long> {
+
+
+    Optional<Categorie> findByNom(String nom);
+
+    boolean existsByNom(String nom);
 
 }
