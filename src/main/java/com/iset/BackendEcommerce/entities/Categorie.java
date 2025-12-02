@@ -24,9 +24,6 @@ public class Categorie {
     @Column(nullable = false, length = 100)
     private String nom;
 
-    @Column
-    private String description;
-
     @OneToMany(mappedBy = "categorie", fetch = FetchType.LAZY)
     private List<Produit> produits = new ArrayList<>();
 }
